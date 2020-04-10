@@ -12,11 +12,24 @@
       origin="center center"
       class="elelvation-1"
       :nudge-bottom="14"
+      :nudge-right="20"
       transition="scale-transition"
+      
     >
       <v-btn slot="activator" icon flat>
           <v-icon medium>settings</v-icon>
       </v-btn>
+      <v-list>
+        <v-list-tile
+          v-for="(item, key) in items"
+          :key="key"
+          @click="handleClick"
+          :to="item.to"
+          style="width:120px;height:45px;"
+        >
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
     </v-menu>
   </v-toolbar>
 </template>
@@ -36,26 +49,31 @@ export default {
       }
     }
   },
-  asyncData: () => ({
-    items: [
-      {
-        icon: "account_circle",
-        to: "/profile",
-        title: "Profile"
-      },
-      {
-        icon: "settings",
-        to: "/settings",
-        title: "Settings"
-      },
-      {
-        icon: "fullscreen_exit",
-        to: "/logout",
-        title: "Logout"
-      }
-    ]
-  }),
+  data() {
+    return{
+      items: [
+        {
+          icon: "account_circle",
+          to: "/profile",
+          title: "Profile"
+        },
+        {
+          icon: "settings",
+          to: "/settings",
+          title: "Settings"
+        },
+        {
+          icon: "fullscreen_exit",
+          to: "/login",
+          title: "Logout"
+        }
+      ]
+    };
+  },
   methods: {
+    handleClick(e) {
+      e.preventDefault();
+    },
     handleFullScreen() {
       const doc = window.document;
       const docEl = doc.documentElement;
