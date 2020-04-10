@@ -1,0 +1,16 @@
+.create_doc_card{
+    flex-basis: 16.6666666666%;
+    flex-grow: 0;
+    max-width: 16.6666666666%;
+    padding:30px !important;
+    /* display:hidden; */
+}
+
+.fullwidth{
+    width:100%;
+}
+
+.v-btn-download{
+    /* height:30px; */
+    text-transform:none;
+}
