@@ -8,13 +8,8 @@
     dark
   >
     <v-toolbar dark>
-      <img
-        src="https://via.placeholder.com/36/000000/FFFFFF/?text=TMP"
-        height="36"
-        alt="placeholder image"
-      />
       <v-toolbar-title class="ml-0 pl-3">
-        <span>Nuxt Material</span>
+        <span>IA-AUTOMAT</span>
       </v-toolbar-title>
     </v-toolbar>
     <v-list dense expand>
